@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="content">
+	<h1>MAT-SU VIDEO STAFF LIST</h1>
+	<table id="TheTable" name="EmployeesTable">
+		<tr>
+			<th>EmployeeID</th>
+			<th>FirstName</th>
+			<th>LastName</th>
+			<th>FavMovie</th>
+			<th>Position</th>
+			<th>Actions</th>
+		</tr>
+		<tr>
+			<td>12345</td>
+			<td>Sterling</td>
+			<td>Beck</td>
+			<td>Memories of Murder</td>
+			<td>Manager</td>
+			<td>
+				<a href="">Delete</a>
+				<br>
+				<a href="">Update</a>
+			</td>
+		</tr>
+		<tr>
+			<td>33333</td>
+			<td>Brandon</td>
+			<td>Murak</td>
+			<td>The Holy Grail</td>
+			<td>Clerk</td>
+			<td>
+				<a href="">Delete</a>
+				<br>
+				<a href="">Update</a>
+			</td>
+		</tr>
+		<tr>
+			<td>54321</td>
+			<td>Kendall</td>
+			<td>Beck</td>
+			<td>Dazed and Confused</td>
+			<td>Manager</td>
+			<td>
+				<a href="">Delete</a>
+				<br>
+				<a href="">Update</a>
+			</td>
+		</tr>
+		<tr>
+			<td>77777</td>
+			<td>Kenneth</td>
+			<td>Hondl</td>
+			<td>Spirited Away</td>
+			<td>Owner</td>
+			<td>
+				<a href="">Delete</a>
+				<br>
+				<a href="">Update</a>
+			</td>
+		</tr>
+		<tr>
+			<td>33432</td>
+			<td>Jim</td>
+			<td>Jimmy Joe</td>
+			<td>Blade Runner</td>
+			<td>Janitor</td>
+			<td>
+				<a href="">Delete</a>
+				<br>
+				<a href="">Update</a>
+			</td>
+		</tr>
+		<tr>
+			<td>22222</td>
+			<td>Rain</td>
+			<td>Hastings</td>
+			<td>Tampopo</td>
+			<td>Clerk</td>
+			<td>
+				<a href="">Delete</a>
+				<br>
+				<a href="">Update</a>
+			</td>
+		</tr>
+		{% for employee in Employees %}
+			<tr>
+				<td>{{ employee.EmployeeID }}</td>
+				<td>{{ employee.FirstName }}</td>
+				<td>{{ employee.LastName }}</td>
+				<td>{{ employee.FavMovie }}</td>
+				<td>{{ employee.Position }}</td>
+				<td>
+					<a href="">Delete</a>
+					<br>
+					<a href="">Update</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+	<form actions="/" method="POST">
+		<input type="text" name="EmployeeID">
+		<input type="text" name="FirstName">
+		<input type="text" name="LastName">
+		<input type="text" name="FavMovie">
+		<input type="text" name="Position">
+		<input type="submit" value="Add Employee">
+	</form>
+</div>
+{% endblock %}
+
